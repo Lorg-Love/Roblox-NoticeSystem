@@ -1,5 +1,4 @@
 --This file is a Localscript in Roblox Studio
-	
 	local ReplicatedStorage = game:GetService('ReplicatedStorage')
 	local RemoveEvent = ReplicatedStorage.NoticeSystem.Creatnotice
 	RemoveEvent.OnClientEvent:Connect(function(Text,Title,sec: number)
@@ -41,7 +40,7 @@
 		end)
 	local a = 0
 		while wait(1) do
-			if a == sec then
+		if a == sec and a ~= nil then
 			Frame:TweenSize(UDim2.new(0, 0,0.186, 0),
 				Enum.EasingDirection.Out,
 				Enum.EasingStyle.Sine,
@@ -52,10 +51,9 @@
 				Frame:Destroy()
 				s = false
 				break
-			elseif a ~= sec and s ~= true then
+		elseif a ~= sec and s ~= true and a ~= nil then
 				a = a + 1
 				print(a,sec)
 			end
 		end
 	end)
---end)
